@@ -4,11 +4,9 @@ $light-gray: #f7f7f7;
 $header-text-color: #222222;
 $text-color: #a2a2a2;
 $logo-font: 'Great Vibes', cursive;
-$text-font: 'Inter', sans-serif;
-$subtitle-font: 'Source Serif Pro', serif;
+$text-font: 'Source Serif Pro', serif;
+$subtitle-font: 'Inter', sans-serif;
 $transition: all .5s linear;
-
-
 
 
 /* Global */
@@ -22,6 +20,10 @@ body {
   font-size: 16px;
 }
 
+p {
+  color: $text-color;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -29,6 +31,27 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.section-header {
+  color: $header-text-color;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+
+.section-subtitle {
+  color: $text-color;
+  font-size: 18px;
+  text-align: center;
+  font-style: italic;
+  font-family: $subtitle-font;
+  margin-bottom: 100px;
 }
 
 /* Navigation */
@@ -48,13 +71,14 @@ nav {
     align-items: baseline;
     padding: 2rem 90px;
 
-    .brand-logo a{
+    .brand-logo a {
       color: $color-main;
       font-family: $logo-font;
       font-size: 30px;
       letter-spacing: 1.2px;
       transition: $transition;
       display: inline-block;
+
       &:hover {
         scale: 1.4;
       }
@@ -69,18 +93,19 @@ nav {
           margin-right: 0;
         }
 
-         a {
-            color: white;
-            font-family:$text-font;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1px;
-            transition: $transition;
-            padding: 1.1rem;
-           &:hover {
-             color: $color-main;
-           }
+        a {
+          color: white;
+          font-family: $subtitle-font;
+          text-transform: uppercase;
+          font-size: 13px;
+          letter-spacing: 1px;
+          transition: $transition;
+          padding: 1.1rem;
+
+          &:hover {
+            color: $color-main;
           }
+        }
       }
     }
   }
@@ -100,8 +125,8 @@ header.splash {
   &:after {
     content: '';
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     bottom: 0;
     right: 0;
     background-color: #343a40;
@@ -121,7 +146,7 @@ header.splash {
     padding-top: 110px;
 
     h1 {
-      font-family: $text-font;
+      font-family: $subtitle-font;
       font-size: 71px;
       text-transform: uppercase;
       font-weight: bold;
@@ -130,7 +155,7 @@ header.splash {
     }
 
     h2.subtitle {
-      font-family: $subtitle-font;
+      font-family: $text-font;
       font-size: 43px;
       font-style: italic;
       margin-bottom: 25px;
@@ -144,6 +169,47 @@ header.splash {
       font-weight: bold;
       font-size: 19px;
       display: inline-block;
+    }
+  }
+}
+
+/* Services */
+
+.services {
+
+  .card {
+    border: none;
+    text-align: center;
+
+    .card-icon {
+      color: $color-main;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid $color-main;
+      text-align: center;
+      margin: 0 auto 20px auto;
+      transition: $transition;
+
+      span {
+        font-size: 45px;
+      }
+    }
+
+    &:hover {
+
+      .card-icon {
+        color: white;
+        background-color: $color-main;
+      }
+    }
+
+    h3.card-title {
+      font-size: 20px;
+    }
+
+    p.card-text {
+      font-family: $text-font;
     }
   }
 }
