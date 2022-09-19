@@ -20,10 +20,7 @@ body {
   font-size: 16px;
 }
 
-div.container {
-  padding-left: 47px;
-  padding-right: 47px;
-}
+
 
 p {
   color: $text-color;
@@ -56,7 +53,7 @@ section {
   text-align: center;
   font-style: italic;
   font-family: $subtitle-font;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 .card {
@@ -87,7 +84,7 @@ nav {
     height: 100%;
     justify-content: space-between;
     align-items: baseline;
-    padding: 2rem 90px;
+    padding: 32px 0;
 
     .brand-logo a {
       color: $color-main;
@@ -101,6 +98,7 @@ nav {
         scale: 1.4;
       }
     }
+
 
     ul {
 
@@ -187,6 +185,7 @@ header.splash {
       font-weight: bold;
       font-size: 19px;
       display: inline-block;
+      cursor: pointer;
     }
   }
 }
@@ -196,6 +195,7 @@ header.splash {
 .services {
 
   .card {
+    padding: 30px 15px;
 
     .card-icon {
       color: $color-main;
@@ -350,5 +350,46 @@ footer {
       text-align: center;
       margin-right: 5px;
     }
+  }
+}
+
+/* @media */
+
+@media (max-width: 992px) {
+  nav .wrapper{
+      padding: 32px 0;
+  }
+
+  header.splash .splash-inner h1 {
+    font-size: 56px;
+  }
+
+  header.splash .splash-inner h2.subtitle {
+    font-size: 38px;
+  }
+
+  footer {
+
+    .row {
+      flex-direction: column-reverse;
+      text-align: center;
+
+      .social-icon {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 776px) {
+  .nav-list {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .services .card {
+    padding: 30px 50px;
   }
 }
