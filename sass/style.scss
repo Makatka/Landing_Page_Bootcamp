@@ -20,8 +20,6 @@ body {
   font-size: 16px;
 }
 
-
-
 p {
   color: $text-color;
 }
@@ -45,11 +43,12 @@ section {
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .section-subtitle {
   color: $text-color;
-  font-size: 18px;
+  font-size: 17px;
   text-align: center;
   font-style: italic;
   font-family: $subtitle-font;
@@ -77,6 +76,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 10;
 
   .wrapper {
     display: flex;
@@ -125,6 +125,25 @@ nav {
       }
     }
   }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .offcanvas {
+    background-color: $header-text-color;
+
+    a {
+      color: white;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding: 15px;
+
+      &:hover {
+        color: $color-main
+      }
+    }
+  }
 }
 
 /*Header */
@@ -135,8 +154,8 @@ header.splash {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 700px;
-  z-index: -5;
+  height: 100vh;
+  z-index: 0;
 
   &:after {
     content: '';
@@ -147,6 +166,38 @@ header.splash {
     right: 0;
     background-color: #343a40;
     opacity: 70%;
+  }
+
+  .scroll-down {
+    height: 50px;
+    width: 30px;
+    border: 2px solid $color-main;
+    position: absolute;
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(50%);
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 2;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      border: 2px solid $color-main;
+      height: 10px;
+      width: 10px;
+      transform: translate(-50%, -100%) rotate(45deg);
+      border-top: transparent;
+      border-left: transparent;
+      animation: scroll-down 1s ease-in-out infinite
+    }
+
+    &:after {
+      top: 30%;
+      animation-delay: .3s;
+    }
   }
 
   .splash-inner {
@@ -179,13 +230,17 @@ header.splash {
 
     a {
       padding: 18px 52px;
-      background-color: #fdd036;
+      background-color: $color-main;
       text-transform: uppercase;
       border-radius: 3px;
       font-weight: bold;
       font-size: 19px;
       display: inline-block;
       cursor: pointer;
+
+      &:hover {
+        filter: brightness(0.95);
+      }
     }
   }
 }
@@ -355,9 +410,15 @@ footer {
 
 /* @media */
 
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1076px;
+  }
+}
+
 @media (max-width: 992px) {
-  nav .wrapper{
-      padding: 32px 0;
+  nav .wrapper {
+    padding: 32px 0;
   }
 
   header.splash .splash-inner h1 {
@@ -385,11 +446,30 @@ footer {
   .nav-list {
     display: none;
   }
-}
 
-@media (max-width: 576px) {
+  nav .navbar-toggler {
+    display: inline-block;
+  }
 
   .services .card {
     padding: 30px 50px;
+  }
+}
+
+/* Keyframes */
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%
   }
 }

@@ -16,12 +16,15 @@
 </head>
 <body>
 <nav>
-    <div class="container">
+    <div class="container navbar-dark">
         <div class="wrapper">
             <div class="brand-logo">
                 <a href="index.html">Golden</a>
             </div>
-           <div class="hamburger"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <ul class="nav-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Services</a></li>
@@ -29,6 +32,23 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+         aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+
         </div>
     </div>
 </nav>
@@ -40,14 +60,17 @@
             <a>Tell me more</a>
         </div>
     </div>
+    <a href="#services">
+        <div class="scroll-down"></div>
+    </a>
 </header>
 <main>
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
             <h2 class="section-header">Services</h2>
             <h3 class="section-subtitle">Cras dignissim varius nulla posuere hendrerit.</h3>
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-icon">
                             <span><i class="fa-solid fa-basket-shopping"></i></span>
@@ -57,7 +80,7 @@
                             Quisque vel augue sit amet tellus gravida pharetra tellus gravida. </p>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-icon">
                             <span><i class="fa-solid fa-laptop"></i></span>
@@ -67,8 +90,7 @@
                             Quisque vel augue sit amet tellus gravida pharetra tellus gravida. </p>
                     </div>
                 </div>
-                <div class="col-sm-3 d-md-none"></div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <div class="card-icon">
                             <span><i class="fa-solid fa-lock"></i></span>
@@ -78,7 +100,6 @@
                             Quisque vel augue sit amet tellus gravida pharetra tellus gravida. </p>
                     </div>
                 </div>
-                <div class="col-sm-3 d-md-none"></div>
             </div>
         </div>
     </section>
@@ -149,7 +170,6 @@
             </div>
         </div>
     </div>
-
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
